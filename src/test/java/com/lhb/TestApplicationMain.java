@@ -33,4 +33,14 @@ public class TestApplicationMain {
         FileUtil.writeFile ( this.outPath+"res2.txt",String.valueOf ( similarity ) );
         System.out.println (similarity );
     }
-}
+
+    //原先文本和删除部分文字的文本对比
+    @Test
+    public void testDelete(){
+        String path2 = "orig_delete.txt";
+        Map<String, List<Integer>> stringListMap1 = TokenizerUtil.CountWord ( this.path );
+        Map<String, List<Integer>> stringListMap2 = TokenizerUtil.CountWord ( path2 );
+        Double similarity = TokenizerUtil.CosCount ( stringListMap1,stringListMap2 );
+        FileUtil.writeFile ( this.outPath+"res_delete.txt",String.valueOf ( similarity ) );
+        System.out.println (similarity );
+    }}
